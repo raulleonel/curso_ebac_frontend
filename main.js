@@ -1,71 +1,17 @@
-const form = document.getElementById('form-atividade'); /*criacao de variavel 'form' usando id do form*/
-const imgAprovado = '<img src="./images/aprovado.png" alt="Emoji celebrando" />';
-const imgReprovado = '<img src="./images/reprovado.png" alt="Emoji decepcionado" />';
-const atividade = []; /* para calcular a media, vamos precisar adicionar em 2 arrays todas as atividade e notas que o usuario digitou */
-const notas = []; /* para calcular a media, vamos precisar adicionar em 2 arrays todas as atividade e notas que o usuario digitou */
-const spanAprovado = '<span class="resultado aprovado">Aprovado</span>';
-const spanReprovado = '<span class="resultado reprovado">Reprovado</span>';
-const notaMinima = parseFloat(prompt('Digite a nota minima para aprovacao:')); /* possibilita que o usuario digite a nota minima para aprovacao - IMPORTANTE, O PROMPT VEM COMO STRING, POR ISSO PARSEFLOAT PARA MUDAR PARA NUMBER */
+$(document).ready(function () { /* Inicializar o código > O método $(document).ready() garante que o código dentro dele seja executado apenas depois que o documento HTML foi totalmente carregado. Isso garante que todos os elementos necessários estejam disponíveis antes que o código tente interagir com eles. */
+    $('form').on('submit', function (e) { /* Lidar com o envio do formulário > Este código usa o método .on() do jQuery para anexar um manipulador de eventos ao elemento form. O manipulador de eventos é acionado sempre que o formulário é enviado. O parâmetro e representa o objeto de evento, que contém informações sobre o evento. */
+        e.preventDefault(); /* Prevenir o comportamento padrão do formulário > Esta linha usa o método e.preventDefault() para impedir o comportamento padrão do envio do formulário, que é recarregar a página. Isso nos permite lidar com o envio do formulário sem realmente enviar o formulário para o servidor. */
 
-let linhas = ''; /* se adicionado no nivel global, mantem conteudo e adiciona uma nova linha*/
+        var tarefa = $("#tarefa").val(); /* Obter o valor do campo de entrada da tarefa > Esta linha recupera o valor do campo de entrada com o ID tarefa. O valor representa o texto inserido pelo usuário como descrição da tarefa. */
 
-form.addEventListener('submit', function(e) { /*criacao do evento de sumbmit , remover comportamento do formulario de quando ser submetido atualizar a tela > para isso cria uma funcao que recebe um parametro que eh o proprio evento e para remover o comportamento de atualizar a pagina chamamos a funcaco (e) preventDefault*/
-    e.preventDefault();
+        const novoItem = $("<li>" + tarefa + "</li>"); /* Criar um novo item da lista > Esta linha cria um novo elemento HTML <li> usando o $() do jQuery, que leva uma string representando o conteúdo HTML como argumento. A descrição da tarefa é inserida dentro da tag <li>. */
 
-    adicionaLinha(); /*chama a funcao criada 'adicionaLinha*/
-    atualizaTabela(); /*chama a funcao criada 'atualizaTabela*/
-    atualizaMediaFinal(); /*chama a funcao criada 'atualizaMediaFinal*/
-}); 
+        $("#tarefas").append(novoItem); /* Adicionar o novo item da lista à lista > Esta linha anexa o elemento <li> recém-criado ao elemento <ul> com o ID tarefas. Isso efetivamente adiciona a nova tarefa à lista. */
+        $("#tarefa").val(""); /* Limpar o campo de entrada da tarefa > Esta linha limpa o valor do campo de entrada com o ID tarefa. Isso garante que o campo de entrada esteja vazio após cada tarefa ser adicionada à lista. */
 
-/* ESSA FUNCAO APENAS ADICIONA UMA LINHA NOVA A VARIAVEL 'LINHAS' */
-function adicionaLinha() {
-    const inputNomeAtividade = document.getElementById('nome-atividade'); /*capturar campos, Nome da atividade*/
-    const inputNotaAtividade = document.getElementById('nota-atividade'); /*capturar campos, Nota da atividade*/
+        $("#tarefas li").click(function() { /* Adicionar um manipulador de eventos de clique aos itens da lista > Esta linha anexa um manipulador de eventos de clique a todos os elementos <li> dentro do elemento <ul> com o ID tarefas. O manipulador de eventos é acionado sempre que um item da lista é clicado. */
+            $(novoItem).css("text-decoration", "line-through"); /* Aplicar a decoração de linha através do item clicado > Esta linha aplica a propriedade CSS text-decoration com o valor line-through ao elemento novoItem. Isso efetivamente desenha uma linha através do texto do item da lista clicado, marcando-o como concluído. */
+            });
+    });
 
-    /* impossibilita adicionar atividades duplicadas com o mesmo nome */
-    if (atividade.includes(inputNomeAtividade.value)) {
-        alert(`A atividade: ${inputNomeAtividade.value} ja foi inserida`);
-    } else {
-        /* foi usado parseFloat para transformar os valores do array que estavam em STRING em NUMERO - caso continuasse em STRING, ao somar ocorreria uma concatenacao ('10'+'3'='103') e agora (10+3=13) */
-        atividade.push(inputNomeAtividade.value); /* toda vez que a funcao adicionaLinha for chamada, vamos fazer um push(adicionar) nos arrays para adicionar o conteudo */
-        notas.push(parseFloat(inputNotaAtividade.value)); /* toda vez que a funcao adicionaLinha for chamada, vamos fazer um push(adicionar) nos arrays para adicionar o conteudo */
-    
-        /*adicionar informacoes nome da atividade, nota e se o aluno foi aprovado ou nao ao corpo da tabela como uma linha*/
-        let linha = '<tr>'; //*criando variavel 'linha' que vai receber o codigo HTML como uma string > para criar linha, usasse o <tr> */
-        linha += `<td>${inputNomeAtividade.value}</td>`; /* += significa "concatenacao" >> criando coluna > para criar coluna, usasse o <td> >> isso significa que a linha vai ser composta da concatenacao de 3 colunas IMPORTANTE USAR CRASE */
-        linha += `<td>${inputNotaAtividade.value}</td>`;
-        linha += `<td>${inputNotaAtividade.value >= notaMinima ? imgAprovado : imgReprovado}</td>`; /* para dizer se o aluno foi aprovado ou nao, usaremos o operador TERNARIO -- if(positivo) usasse '?' else(negativo) usasse ':' */
-        linha += '</tr>';
-    
-        linhas += linha /*concatenando 'linha' dentro da variavel 'linhas', assim podesse adicionar quantas 'linha' quiser dentro de 'linhas'*/
-    }
-
-    inputNomeAtividade.value = ''; /* limpar campo depois de adicionar conteudo */
-    inputNotaAtividade.value = ''; /* limpar campo depois de adicionar conteudo */
-}
-
-/* ESSA FUNCAO APENAS ATUALIZA O CONTEUDO DA TABELA */
-function atualizaTabela () {
-    const corpoTabela = document.querySelector('tbody'); /* insersao do conteudo dentro do corpo da tabela - para isso, criar uma constante (corpoTabela) e usar o seletor querySelector chamando o corpo da tabela (tbody) */
-    corpoTabela.innerHTML = linhas; /* para inserir um conteudo dentro de uma tag HTML, usamos o atributo innerHTML */
-}
-
-/* ESSA FUNCAO APENAS ATUALIZA O A MEDIA FINAL DA TABELA */
-function atualizaMediaFinal () {
-    const mediaFinal = calculaMediaFinal(); /* criada funcao que recebe o valor resultante do valor da funcao calculaMediaFinal */
-
-    document.getElementById('media-final-valor').innerHTML = mediaFinal; /* recebe o valor da mediaFinal no codigo HTML exibido no pagina */
-    document.getElementById('media-final-resultado').innerHTML = mediaFinal >= notaMinima ? spanAprovado : spanReprovado; /* novamente o uso do operador TERNARIO para classificar a media */
-}
-
-function calculaMediaFinal () {
-    let somaDasNotas = 0; /* para calcular a media vamos precisar criar um laco, para isso, criar uma variavel comecando com valor '0'*/
-
-    for (let i = 0; i < notas.length; i++) { /* criando um laco 'for' > comeca com [i]=0, i < notas.lenght (quantidade de notas q o usuario inseriu); i++ (i sera incrementado cada vez q entrar no laco for) EX: [I] COMECA COM 0, USUARIO INSERE UMA NOTA PORTANTO [I] < NOTAS (0<1) PORTANTO [I] EH INCREMENTADO E PASSA A SER 1*/
-        somaDasNotas += notas[i]; /* somaDasNotas = somaDasNotas + notas[i] - supondo q a primeira nota inserida foi 10, somaDasNotas que inicialmente era 0 passa a ser somaDasNotas = 0 + [10] igual a 10, supondo que a segunda nota foi 5, somaDasNotas que agora era 10 fica somaDasNotas = 10 + [5] igual 15 */
-    }
-
-    return somaDasNotas / notas.length; /* para tirar a media basta dividir somaDasNotas pela quantidade de entrada de notas que o usuario fez (notas.lenght) */
-}
-
-
+    })
