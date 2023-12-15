@@ -3,53 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EBAC motors</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:wght@400;700&family=Skranji&display=swap" rel="stylesheet">
+    <title>Loja Nike Shoes</title>
+    <link rel="preload" href="https://static.nike.com.br/fonts/HelveticaNeue/medium/helveticaNeueMedium.woff2" as="font" crossorigin="" fetchpriority="high" type="font/woff2">
+    <link rel="preload" href="https://static.nike.com.br/fonts/HelveticaNeue/regular/helveticaNeueRegular.woff2" as="font" crossorigin="" fetchpriority="high" type="font/woff2">
+    <link rel="preload" as="style" fetchpriority="high" href="https://static.nike.com.br/fonts/HelveticaNeue/fontface-helvetica-neue.style.css">
+    <link rel="preload" href="https://static.nike.com.br/v10-301-2/_next/static/css/2493c1a27e330e7b.css" as="style">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 <body>
     <header>
-        <div class="container container-flex">
-            <h1>EBAC Motors</h1>
-            <div class="menu-hamburguer">
-                <span></span> <!-- cria uma linha do menu hamburguer-->
-                <span></span>
-                <span></span>
+        <div class="container container-flex teste">
+            <img src="/images/nike-logo-47A65A59D5-seeklogo.com.png" id="nike" alt="logo Nike">
+                <h1>Loja Nike Shoes</h1>
+                <nav>
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="#">Sobre a loja</a>
+                            </li>
+                            <li>
+                                <a href="#">Produtos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
-            <nav>
-                <div class="container">
-                    <ul>
-                        <li>
-                            <a href="#">Sobre</a>
-                        </li>
-                        <li>
-                            <a href="#">Em destaque</a>
-                        </li>
-                        <li>
-                            <a href="#">Promocoes</a>
-                        </li>
-                        <li>
-                            <a href="#">Contato</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
     </header>
-    <div id="carrossel-imagens">
-        <img src="images/slide1.png" alt="Carro da Porshe">
-        <img src="images/slide2.png" alt="Carro da BMW">
-        <img src="images/slide3.png" alt="Carro da Ford">
-    </div>
     <section id="sobre-a-loja"> <!-- sessao Sobre -->
         <div class="container container-flex">
-            <img src="./images/loja.jpg" alt="imagem da loja EBAC Motors">
+            <img src="./images/nike store 2.jpeg" alt="imagem da loja Nike Shoes">
             <div> <!-- container do elemento textual-->
-                <h2>Sobre a EBAC Motors</h2>
+                <h2>Sobre a loja</h2>
+                <hr>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consectetur sit iure! Possimus architecto harum incidunt nemo culpa inventore doloribus eveniet sequi minima laborum? Distinctio quia ad cupiditate voluptatibus illum.
                 </p>
@@ -61,208 +47,111 @@
     </section>
 
     <section>
-        <div class="container">
-            <h2>Em destaque</h2>
-            <ul class="container-flex lista-veiculos"> <!-- elementos da lista um ao lado do outro-->
+        <div class="container-produtos">
+            <h2>Produtos</h2>
+            <ul class="container-flex lista-produtos"> <!-- elementos da lista um ao lado do outro-->
                 <li>
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                    <img src="./images/nike dunk low.jpeg" alt="">
+                    <h3>Tenis Nike Dunk Low</h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Casual.
                     </p>
                     <div class="price">
-                        <strong>R$ 75.000,00</strong>
+                        <strong>R$ 900,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
-                </li>
-                <li class="item-cental">
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
-                    <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
-                    </p>
-                    <div class="price">
-                        <strong>R$ 75.000,00</strong>
-                    </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
                 <li>
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                    <img src="./images/nike air max 270.jpeg" alt="">
+                    <h3>Tenis Nike Air Max 270</h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Treino & Academia.
                     </p>
                     <div class="price">
-                        <strong>R$ 75.000,00</strong>
+                        <strong>R$ 559,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
                 <li>
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                    <img src="./images/nike-dunk-high-1985-acid-wash-red-1-1000-11-db2422ca054afcf8a216367439107959-640-0.jpeg" alt="">
+                    <h3>Tenis Nike Dunk High </h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Skateboarding.
                     </p>
                     <div class="price">
-                        <strong>R$ 75.000,00</strong>
+                        <strong>R$ 629,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
-                <li class="item-cental">
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                <li>
+                    <img src="./images/nike shoes yellow.jpeg" alt="">
+                    <h3>Tenis Nike Dunk Yellow</h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Casual.
                     </p>
                     <div class="price">
-                        <strong>R$ 75.000,00</strong>
+                        <strong>R$ 850,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
             </ul>
         </div>
     </section>
 
     <section>
-        <div class="container">
+        <div class="container-produtos">
             <h2>Promocoes</h2>
-            <ul class="container-flex lista-veiculos"> <!-- elementos da lista um ao lado do outro-->
+            <ul class="container-flex lista-produtos"> <!-- elementos da lista um ao lado do outro-->
                 <li>
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                    <img src="./images/nike dunk low.jpeg" alt="">
+                    <h3>Tenis Nike Dunk Low</h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Casual.
                     </p>
                     <div class="price">
-                        <del>R$ 100.000,00</del>
-                        <strong>R$ 75.000,00</strong>
+                        <del>R$ 900,00</del>
+                        <strong>R$ 750,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
-                </li>
-                <li class="item-cental">
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
-                    <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
-                    </p>
-                    <div class="price">
-                        <del>R$ 100.000,00</del>
-                        <strong>R$ 75.000,00</strong>
-                    </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
                 <li>
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                    <img src="./images/nike air max 270.jpeg" alt="">
+                    <h3>Tenis Nike Air Max 270</h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Treino & Academia.
                     </p>
                     <div class="price">
-                        <del>R$ 100.000,00</del>
-                        <strong>R$ 75.000,00</strong>
+                        <del>R$ 559,00</del>
+                        <strong>R$ 499,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
                 <li>
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                    <img src="./images/nike-dunk-high-1985-acid-wash-red-1-1000-11-db2422ca054afcf8a216367439107959-640-0.jpeg" alt="">
+                    <h3>Tenis Nike Dunk High </h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Skateboarding.
                     </p>
                     <div class="price">
-                        <del>R$ 100.000,00</del>
-                        <strong>R$ 75.000,00</strong>
+                        <del>R$ 629,00</del>
+                        <strong>R$ 500,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
-                <li class="item-cental">
-                    <img src="./images/carro-bmw.png" alt="">
-                    <h3>Carro BMW</h3>
+                <li>
+                    <img src="./images/nike shoes yellow.jpeg" alt="">
+                    <h3>Tenis Nike Dunk Yellow</h3>
                     <p>
-                        Cambio automatico, 4 portas, vidro e travas eletricas.
+                        Casual.
                     </p>
                     <div class="price">
-                        <del>R$ 100.000,00</del>
-                        <strong>R$ 75.000,00</strong>
+                        <del>R$ 850,00</del>
+                        <strong>R$ 720,00</strong>
                     </div>
-                    <button type="button">Tenho interesse</button>
+                    <button type="button">Adicionar ao carrinho</button>
                 </li>
             </ul>
         </div>
     </section>
-
-    <section id="contato">
-        <div class="container">
-            <h2>Entre em contato</h2>
-            <form>
-                <div class="form-campo">
-                    <label for="nome">Nome completo:</label>
-                    <input type="text" id="nome" name="nome">
-                </div>
-                <div class="form-campo">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-campo">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone">
-                </div>
-                <div class="form-campo">
-                    <label for="cpf">CPF:</label>
-                    <input data-type="number" id="cpf" name="cpf">
-                </div>
-                <div class="form-campo">
-                    <label for="endereco-completo">Endereco completo:</label>
-                    <input type="text" id="endereco-completo" name="enderecoCompleto">
-                </div>
-                <div class="form-campo">
-                    <label for="cep">CEP:</label>
-                    <input data-type="number" id="cep" name="cep">
-                </div>
-                <div class="form-campo">
-                    <label for="veiculo-interesse">Veiculo de interesse:</label>
-                    <input type="text" id="veiculo-interesse" name="veiculoInteresse">
-                </div>
-                <div class="form-campo">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem"></textarea>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container container-flex">
-            <p>
-                2023 &copy; EBAC Motors - Todos os direitos reservados.
-            </p>
-            <ul class="container-flex">
-                <li>
-                    <a href="#">
-                        <img src="./icones/facebook.png" alt="Facebook">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./icones/instagram.png" alt="Instagram">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./icones/youtube.png" alt="Youtube">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./js/jquery.mask.min.js"></script> <!--inclusao do plugin para aplicacao de mascaras-->
-    <script src="./js/jquery.validate.min.js"></script> <!--inclusao do plugin para validacao do formulario via JQuery-->
-    <script src="./js/messages_pt_BR.min.js"></script> 
-    <script src="./js/main.js"></script>
 </body>
 </html>

@@ -2,43 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', 'sans-serif';
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-html {
-    overflow-x: hidden; /*esconde todo conteudo que ultrapassar o limite da margem horizontal*/
+header {
+    background-color: #e8e5e5;
+    padding-top: 16px;
+    color: #050000;
+    padding-bottom: 16px;
+}
+
+header img {
+    max-width: 80px;
+}
+
+.teste {
+    display: flex;
 }
 
 .container {
+    display: flex;
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
 }
 
-header, footer {
-    background-color: #192a56;
-    padding-top: 16px;
-    color: #fff;
-}
-
-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-header > .container,
-footer > .container { /*seleciona apenas o container do header*/
-    justify-content: space-between;
+header > .container {
     align-items: center;
-    padding-bottom: 16px;
-}
-
-nav {
-    background-color: #575fcf;
-    padding: 16px 0;
-    display: none; /*menu nav n fica visivel logo de cara*/
+    justify-content: space-between;
 }
 
 nav li {
@@ -51,29 +42,17 @@ nav li {
 }
 
 nav li a {
-    color: #fff;
+    color: #050000;
     text-decoration: none; /*remove decoration do texto da tag a*/
 }
 
-.menu-hamburguer {
-    width: 32px;
-    cursor: pointer;
-}
-
-.menu-hamburguer span {
-    height: 2px;
-    width: 100%;
-    background-color: #fff;
-    display: block;
-    margin-bottom: 4px;
-}
-
-.container-flex { /*deixa elementos um ao lado do outro*/
+.container-flex {
     display: flex;
 }
 
 #sobre-a-loja img {
     max-width: 400px;
+    object-fit: contain;
     margin-right: 24px;
 }
 
@@ -82,29 +61,37 @@ section {
 }
 
 section h2 {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+    font-style: italic;
 }
 
-.lista-veiculos {
-    flex-wrap: wrap;
-}
-
-.lista-veiculos li {
-    list-style: none; /*remover os bullets*/
-    max-width: 30%;
+hr {
     margin-bottom: 24px;
 }
 
-.lista-veiculos li img {
+.lista-produtos {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(4, 24.25%);
+    column-gap: 1%;
+    row-gap: 5%;
+}
+
+.lista-produtos li {
+    list-style: none; /*remover os bullets*/
+    margin-bottom: 24px;
+    margin: 0 8px;
+}
+
+.lista-produtos li img {
     max-width: 100%;
+    max-width: 200px;
+    max-height: 200px;
 }
 
-.lista-veiculos li h3 {
+.lista-produtos li h3 {
     margin: 16px 0;
-}
-
-.item-cental {
-    margin: 0 5%;
 }
 
 button {
@@ -121,6 +108,12 @@ button {
     border-radius: 6px;
 }
 
+.container-produtos {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .price {
     margin: 16px 0;
     display: block;
@@ -131,40 +124,122 @@ button {
     font-size: 14px;
 }
 
-.form-campo {
-    margin-bottom: 16px;
+
+@media screen and (max-width: 640px) {
+    
+    header {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        max-width: 640px;
+        margin-bottom: 16px;
+    }
+
+    header div.container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    header div.teste {
+        display: block;
+        text-align: center;
+    }
+
+    header img {
+        max-width: 80px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        margin-bottom: 8px;
+    }
+
+    section div.container-flex {
+        max-width: 70%;
+    }
+
+    #sobre-a-loja {
+        text-align: center;
+    }
+
+    .container {
+        display: block;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    nav li a {
+        display: block;
+    }
+
+    #sobre-a-loja img {
+        margin-right: 0;
+    }
+
+    section {
+        padding: 8px 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 32px;
+    }
+
+    .lista-produtos {
+        display: block;
+        justify-content: inherit;
+        align-items: inherit;
+        grid-template-columns: none;
+        column-gap: 0;
+        row-gap: 0;
+    }
+
+    .lista-produtos li {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    button {
+        width: 200px;
+        margin: auto;
+    }
+
 }
 
-.form-campo label {
-    font-weight: bold;
-    display: block;
-}
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+    }
 
-.form-campo input,
-.form-campo textarea {
-    width: 100%;
-    display: block;
-    padding: 8px;
-}
+    header div.container {
+        display: inline;
+        font-size: 14px;
+    }
 
-.form-campo textarea {
-    resize: none;
-    height: 120px;
-}
+    header div.container-flex {
+        display: flex;
+    }
 
-form {
-    max-width: 360px;
-}
+    section div.container-flex {
+        align-content: center;
+    }
 
-form button {
-    max-width: 120px;
-}
+    h2 {
+        text-align: center;
+        font-size: 38px;
+    }
 
-footer li {
-    list-style: none;
-    margin-left: 16px;
-}
+    .lista-produtos {
+        grid-template-columns: repeat(2, 49%);
+        text-align: center;
+    }
 
-footer li img {
-    height: 32px;
+    button {
+        width: 300px;
+        margin: auto;
+    }
+
 }
