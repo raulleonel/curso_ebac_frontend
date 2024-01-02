@@ -1,157 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Nike Shoes</title>
-    <link rel="preload" href="https://static.nike.com.br/fonts/HelveticaNeue/medium/helveticaNeueMedium.woff2" as="font" crossorigin="" fetchpriority="high" type="font/woff2">
-    <link rel="preload" href="https://static.nike.com.br/fonts/HelveticaNeue/regular/helveticaNeueRegular.woff2" as="font" crossorigin="" fetchpriority="high" type="font/woff2">
-    <link rel="preload" as="style" fetchpriority="high" href="https://static.nike.com.br/fonts/HelveticaNeue/fontface-helvetica-neue.style.css">
-    <link rel="preload" href="https://static.nike.com.br/v10-301-2/_next/static/css/2493c1a27e330e7b.css" as="style">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header>
-        <div class="container container-flex teste">
-            <img src="/images/nike-logo-47A65A59D5-seeklogo.com.png" id="nike" alt="logo Nike">
-                <h1>Loja Nike Shoes</h1>
-                <nav>
-                    <div class="container">
-                        <ul>
-                            <li>
-                                <a href="#">Sobre a loja</a>
-                            </li>
-                            <li>
-                                <a href="#">Produtos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success">
+                    Confira as novidades do blog <a href="#">clicando aqui</a>
+                </div>
             </div>
         </div>
-    </header>
-    <section id="sobre-a-loja"> <!-- sessao Sobre -->
-        <div class="container container-flex">
-            <img src="./images/nike store 2.jpeg" alt="imagem da loja Nike Shoes">
-            <div> <!-- container do elemento textual-->
-                <h2>Sobre a loja</h2>
-                <hr>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consectetur sit iure! Possimus architecto harum incidunt nemo culpa inventore doloribus eveniet sequi minima laborum? Distinctio quia ad cupiditate voluptatibus illum.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consectetur sit iure! Possimus architecto harum incidunt nemo culpa inventore doloribus eveniet sequi minima laborum? Distinctio quia ad cupiditate voluptatibus illum.
-                </p>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>
+                    Ultimas postagens
+                </h2>
+                <!-- g-0 alinha container com mensagem de alerta -->
+                <div class="container g-0">
+                    <div class="row">
+                        <div class="col-md-4 post">
+                            <img src="https://via.placeholder.com/180x180" alt=""/>
+                            <h4 class="h5">Titulo da imagem</h4>
+                            <time>27/12/2023</time>
+                            <a class="btn btn-primary btn-sm">Leia mais</a>
+                        </div>
+                        <div class="col-md-4 post">
+                            <img src="https://via.placeholder.com/180x180" alt=""/>
+                            <h4 class="h5">Titulo da imagem</h4>
+                            <time>27/12/2023</time>
+                            <a class="btn btn-primary btn-sm">Leia mais</a>
+                        </div>
+                        <div class="col-md-4 post">
+                            <img src="https://via.placeholder.com/180x180" alt=""/>
+                            <h4 class="h5">Titulo da imagem</h4>
+                            <time>27/12/2023</time>
+                            <a class="btn btn-primary btn-sm">Leia mais</a>
+                        </div>
+                        <div class="col-md-4 post">
+                            <img src="https://via.placeholder.com/180x180" alt=""/>
+                            <h4 class="h5">Titulo da imagem</h4>
+                            <time>27/12/2023</time>
+                            <a class="btn btn-primary btn-sm">Leia mais</a>
+                        </div>
+                        <div class="col-md-4 post">
+                            <img src="https://via.placeholder.com/180x180" alt=""/>
+                            <h4 class="h5">Titulo da imagem</h4>
+                            <time>27/12/2023</time>
+                            <a class="btn btn-primary btn-sm">Leia mais</a>
+                        </div>
+                        <div class="col-md-4 post">
+                            <img src="https://via.placeholder.com/180x180" alt=""/>
+                            <h4 class="h5">Titulo da imagem</h4>
+                            <time>27/12/2023</time>
+                            <a class="btn btn-primary btn-sm">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- display flex + justify content end para trazer a barra lateral para o canto direito -->
+            <div class="col-md-4 d-flex justify-content-end">
+                <div>
+                    <h2>
+                        Anunciantes
+                    </h2>
+                    <img src="https://via.placeholder.com/180x180" alt=""/>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section>
-        <div class="container-produtos">
-            <h2>Produtos</h2>
-            <ul class="container-flex lista-produtos"> <!-- elementos da lista um ao lado do outro-->
-                <li>
-                    <img src="./images/nike dunk low.jpeg" alt="">
-                    <h3>Tenis Nike Dunk Low</h3>
-                    <p>
-                        Casual.
-                    </p>
-                    <div class="price">
-                        <strong>R$ 900,00</strong>
+        <div class="row">
+            <div class="col">
+                <h2>Entre em contato</h2>
+                <!-- Estilizacao form com Bootstrap form-label e form-control -->
+                <form>
+                    <label class="form-label" for="nome">Seu nome:</label>
+                    <input class="form-control" type="text" id="nome"/>
+                    <label for="email" class="form-label">Seu email:</label>
+                    <input type="text" class="form-control" id="email">
+                    <label class="form-label" for="telefone">Seu telefone:</label>
+                    <input class="form-control" type="tel" id="telefone"/>
+                    <label for="mensagem" class="form-label">Sua mensagem:</label>
+                    <textarea id="mensagem" class="form-control"></textarea>
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="aceito-termos">Li e concordo com termos do site</label>
+                        <input class="form-check-input" type="checkbox" id="aceito-termos">
                     </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-                <li>
-                    <img src="./images/nike air max 270.jpeg" alt="">
-                    <h3>Tenis Nike Air Max 270</h3>
-                    <p>
-                        Treino & Academia.
-                    </p>
-                    <div class="price">
-                        <strong>R$ 559,00</strong>
-                    </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-                <li>
-                    <img src="./images/nike-dunk-high-1985-acid-wash-red-1-1000-11-db2422ca054afcf8a216367439107959-640-0.jpeg" alt="">
-                    <h3>Tenis Nike Dunk High </h3>
-                    <p>
-                        Skateboarding.
-                    </p>
-                    <div class="price">
-                        <strong>R$ 629,00</strong>
-                    </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-                <li>
-                    <img src="./images/nike shoes yellow.jpeg" alt="">
-                    <h3>Tenis Nike Dunk Yellow</h3>
-                    <p>
-                        Casual.
-                    </p>
-                    <div class="price">
-                        <strong>R$ 850,00</strong>
-                    </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-            </ul>
+                    <button class="btn btn-success">Enviar</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section>
-        <div class="container-produtos">
-            <h2>Promocoes</h2>
-            <ul class="container-flex lista-produtos"> <!-- elementos da lista um ao lado do outro-->
-                <li>
-                    <img src="./images/nike dunk low.jpeg" alt="">
-                    <h3>Tenis Nike Dunk Low</h3>
-                    <p>
-                        Casual.
-                    </p>
-                    <div class="price">
-                        <del>R$ 900,00</del>
-                        <strong>R$ 750,00</strong>
-                    </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-                <li>
-                    <img src="./images/nike air max 270.jpeg" alt="">
-                    <h3>Tenis Nike Air Max 270</h3>
-                    <p>
-                        Treino & Academia.
-                    </p>
-                    <div class="price">
-                        <del>R$ 559,00</del>
-                        <strong>R$ 499,00</strong>
-                    </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-                <li>
-                    <img src="./images/nike-dunk-high-1985-acid-wash-red-1-1000-11-db2422ca054afcf8a216367439107959-640-0.jpeg" alt="">
-                    <h3>Tenis Nike Dunk High </h3>
-                    <p>
-                        Skateboarding.
-                    </p>
-                    <div class="price">
-                        <del>R$ 629,00</del>
-                        <strong>R$ 500,00</strong>
-                    </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-                <li>
-                    <img src="./images/nike shoes yellow.jpeg" alt="">
-                    <h3>Tenis Nike Dunk Yellow</h3>
-                    <p>
-                        Casual.
-                    </p>
-                    <div class="price">
-                        <del>R$ 850,00</del>
-                        <strong>R$ 720,00</strong>
-                    </div>
-                    <button type="button">Adicionar ao carrinho</button>
-                </li>
-            </ul>
-        </div>
-    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
